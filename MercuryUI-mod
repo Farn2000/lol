@@ -1612,7 +1612,7 @@ function Library:dropdown(options)
 		selectedText.Text = text
 		selectedText:tween{Size = UDim2.fromOffset(selectedText.TextBounds.X + 20, 20), Length = 0.05}
 	end
-	function DescSet(text)
+	function methods:DescSet(text)
 		description.Text = text
 	end
 	function methods:RemoveItems(fitems)

@@ -1427,7 +1427,7 @@ function Library:dropdown(options)
 		Theme = {TextColor3 = "StrongText"},
 		TextXAlignment = Enum.TextXAlignment.Left
 	})
-
+	local A = {}
 	if options.Description then
 		local description = dropdownContainer:object("TextLabel", {
 			BackgroundTransparency = 1,
@@ -1438,6 +1438,9 @@ function Library:dropdown(options)
 			Theme = {TextColor3 = "WeakText"},
 			TextXAlignment = Enum.TextXAlignment.Left
 		})
+		function A:DescSet(text)
+			description.Text = text
+		end
 	end
 
 
@@ -1612,9 +1615,7 @@ function Library:dropdown(options)
 		selectedText.Text = text
 		selectedText:tween{Size = UDim2.fromOffset(selectedText.TextBounds.X + 20, 20), Length = 0.05}
 	end
-	function methods:DescSet(text)
-		description.Text = text
-	end
+
 	function methods:RemoveItems(fitems)
 		for _, v in next, fitems do
 			for _2, v2 in next, items do
